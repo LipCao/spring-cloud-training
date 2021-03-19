@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo1</title>
+</head>
+<body>
+    <h1>Fuck java!</h1>
+    <button onclick="show()">点击</button>
+    <div id="result" >Fuck java!</div>
+</body>
+<!--<script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.12.4/jquery.js"></script>-->
+<script type="text/javascript" src=https://cdn.jsdelivr.net/npm/jquery@1.11.1/dist/jquery.min.js></script>
+<script>
+    function show() {
+        $("#result").html("111");
+        console.log("ssss");
+        $.ajax({
+            url:"/getResult",
+            type: "get",
+            //dataType: "json",
+            success: function (result){
+                console.log(result);
+               $("#result").html(result);
+            },
+            error:function(xhr,textStatus){
+                console.log('错误');
+                console.log(xhr);
+                console.log(textStatus);
+            }
+        });
+    }
+</script>
+</html>
